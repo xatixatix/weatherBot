@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.command(name = 'weather', pass_context=True)
 async def get_weather(ctx: discord.ext.commands.context.Context, *, content:str):
-        await ctx.send(f'Requesting weather for your location')
+        await ctx.send(f'Requesting weather for {content}')
         response = await weather.weather.get_weather_data(content, keys.WEATHER_API_KEY)
         await ctx.send(f'{response}')
 
